@@ -1,0 +1,2641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishteaque Ahmed Ishaqui - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #3b82f6;
+            --card-hover: #1a1a1a;
+            --badge-bg: #222222;
+            --animation-timing: 0.3s;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Container styles */
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+            opacity: 0.8;
+            animation: fadeIn 0.8s ease-out forwards;
+            padding: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header styles */
+        header {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin: 1rem;
+            border-radius: 0.5rem;
+            background: var(--bg-secondary);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+            transition: transform 0.3s ease;
+            transform-origin: center;
+            animation: pulseGlow 3s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); }
+            100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .header-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .header-tags {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .header-tags span {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Card styles */
+        .card {
+            background: #1a1a1a; /* Dark grey background */
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 800px; /* Increased max-width */
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+
+        .card:hover::after {
+            transform: translateX(100%);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+            background: var(--card-hover);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
+        }
+
+        /* Badge styles */
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .badge {
+            position: relative;
+            overflow: hidden;
+            background: var(--badge-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .badge:hover {
+            transform: translateY(-3px);
+            background: var(--accent);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        /* List styles */
+        ul {
+            list-style: none;
+            margin-left: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        li:hover {
+            transform: translateX(10px);
+        }
+
+        strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 0.5rem;
+            }
+
+            .container {
+                padding: 0.5rem;
+            }
+
+            header {
+                padding: 1.5rem 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .header-title {
+                font-size: 2rem;
+            }
+
+            .header-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .card {
+                margin: 10px;
+                border-radius: 12px;
+                padding: 20px;
+            }
+
+            .card-title {
+                font-size: 1.5rem;
+            }
+
+            .badge-container {
+                gap: 0.5rem;
+            }
+
+            .badge {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .header-title {
+                font-size: 1.5rem;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .card-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Landscape Mode */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .container {
+                padding: 0.5rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #000000;
+                --bg-secondary: #111111;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .profile-image {
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 0.5s ease-out forwards 1s;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus States for Accessibility */
+        *:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) {
+            .card:hover {
+                transform: none;
+            }
+
+            .badge:hover {
+                transform: none;
+            }
+        }
+
+        /* Company Section Styles */
+        .company-section {
+            padding: 1rem 0;
+        }
+
+        .company-description {
+            font-size: 15px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .company-details {
+            background: var(--bg-primary);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .company-link {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .company-link::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .company-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .company-link:hover::after {
+            transform: translateX(100%);
+        }
+
+        .company-highlights {
+            margin-top: 1.5rem;
+        }
+
+        .company-highlights h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .company-description {
+                font-size: 1rem;
+            }
+
+            .company-details {
+                padding: 1rem;
+            }
+
+            .company-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .core-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            background: #1a1a1a; /* Match the main card background */
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature h4 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .vision-section {
+            background: #1a1a1a; /* Match the main card background */
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .vision-section h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .services-grid {
+            margin-top: 2rem;
+        }
+
+        .service-categories {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .service-tag {
+            background: var(--accent);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .service-card {
+            background: #1a1a1a; /* Match the main card background */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+        }
+
+        .service-card h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .core-features {
+                grid-template-columns: 1fr;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+
+            .vision-section {
+                padding: 1.5rem;
+            }
+        }
+
+        .academy-showcase {
+            background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));
+        }
+
+        .academy-hero {
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .academy-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--accent), #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .academy-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .academy-pillars {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .academy-pillars span {
+            background: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .offer-section {
+            margin: 3rem 0;
+        }
+
+        .offer-banner {
+            background: linear-gradient(45deg, var(--accent), #60a5fa);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .offer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .offer-features {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .plans-grid {
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .plan-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .plan-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+
+        .plan-features {
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .plan-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .plan-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #1a1a1a; /* Match the main card background */
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .academy-title {
+                font-size: 2rem;
+            }
+
+            .academy-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .offer-banner {
+                padding: 1.5rem;
+            }
+
+            .plans-container {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .company-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-title .icon {
+            color: var(--accent);
+            font-size: 2rem;
+        }
+
+        .company-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 24px 0;
+        }
+
+        .company-section {
+            margin-bottom: 24px;
+        }
+
+        /* Update existing styles to work with new structure */
+        .company-section .academy-hero {
+            margin-top: 2rem;
+        }
+
+        .company-section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #000000;
+            z-index: 1000;
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            width: 100%;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 2rem 1rem;
+            margin: 0;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            width: 100%;
+        }
+
+        .footer-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section p {
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: white !important;
+            border-color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 64rem;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Update container padding for navbar */
+        .container {
+            padding-top: 60px; /* Height of navbar */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 60px; /* Height of navbar */
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: #000000;
+                padding: 1rem;
+                display: none;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: var(--text-secondary);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                background: transparent;
+                border: none;
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            /* Remove animation delays for smoother opening */
+            .nav-links a {
+                opacity: 1;
+                transform: none;
+                transition: color 0.3s ease, padding-left 0.3s ease;
+            }
+
+            .nav-links.active a {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Mobile Menu Animation */
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3,
+        .contact-form h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+        }
+
+        .contact-item h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
+        }
+
+        .social-connect h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--accent);
+            border-radius: 2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        .services-grid h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .service-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-intro {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+        }
+
+        .contact-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .social-connect {
+            margin-top: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--accent);
+            border-radius: 2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover .btn-icon {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        .contact-overlay {
+            background: var(--bg-secondary);
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+            margin-bottom: 0;
+            border-bottom: none;
+            width: 100%;
+            margin: 0;
+        }
+
+        .contact-form-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-primary);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--text-secondary);
+        }
+
+        .modern-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+            outline: none;
+        }
+
+        .submit-button {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .button-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .submit-button:hover .button-icon {
+            transform: translateX(5px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-overlay {
+                padding: 1rem;
+            }
+
+            .contact-form-container {
+                padding: 1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .form-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation for form elements */
+        .input-group {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-group:nth-child(1) { animation-delay: 0.1s; }
+        .input-group:nth-child(2) { animation-delay: 0.2s; }
+        .input-group:nth-child(3) { animation-delay: 0.3s; }
+        .input-group:nth-child(4) { animation-delay: 0.4s; }
+
+        .floating-help {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+        }
+
+        .help-trigger {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .help-trigger:hover {
+            transform: scale(1.1);
+        }
+
+        .help-icon {
+            font-size: 1.5rem;
+        }
+
+        .help-dialog {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 300px;
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(0);
+            opacity: 0;
+            transform-origin: bottom right;
+            transition: all 0.3s ease;
+        }
+
+        .help-dialog.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .dialog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .dialog-header h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .close-dialog {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .help-dialog p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .help-button {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .help-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .floating-help {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .help-trigger {
+                width: 50px;
+                height: 50px;
+            }
+
+            .help-dialog {
+                width: 280px;
+                bottom: 70px;
+            }
+        }
+
+        .skills-subtitle {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .skills-subtitle:first-of-type {
+            margin-top: 1rem;
+        }
+
+        .soft-skills-list {
+            margin-top: 1rem;
+        }
+
+        .soft-skills-list li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            transition: transform 0.3s ease;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .soft-skills-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .soft-skills-list li:hover {
+            transform: translateX(10px);
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .skills-subtitle {
+                font-size: 1.1rem;
+                margin: 1.5rem 0 0.75rem;
+            }
+        }
+
+        .education-timeline {
+            padding: 1rem 0;
+        }
+
+        .education-item {
+            margin-bottom: 2rem;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .education-item ul {
+            margin-left: 0;
+        }
+
+        .education-item li {
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .education-item li:hover {
+            transform: translateX(10px);
+        }
+
+        .education-item strong {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .education-item p {
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .institution {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .education-item h3 {
+                font-size: 1.1rem;
+            }
+
+            .education-item strong {
+                font-size: 1rem;
+            }
+        }
+
+        .collapsible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .collapsible-header:hover {
+            color: var(--accent);
+        }
+
+        .collapse-icon {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .collapse-icon.active {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .collapsible-content.active {
+            max-height: 500px; /* Adjust based on content */
+            opacity: 1;
+            transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+        }
+
+        /* Add or update these responsive styles in your style section */
+        @media screen and (max-width: 768px) and (aspect-ratio: 16/9) {
+            /* Container adjustments */
+            .container {
+                padding-top: 4rem;
+                max-width: 100%;
+            }
+
+            /* Header adjustments */
+            header {
+                padding: 1.5rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1rem;
+            }
+
+            .header-title {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .header-subtitle {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .header-tags span {
+                padding: 0.3rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            /* Card adjustments */
+            .card {
+                padding: 1.25rem;
+                margin-bottom: 1rem;
+                border-radius: 0.75rem;
+            }
+
+            .card-header {
+                margin-bottom: 1rem;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+
+            /* Skills section */
+            .badge-container {
+                gap: 0.5rem;
+            }
+
+            .badge {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            /* Companies section */
+            .core-features {
+                gap: 1rem;
+            }
+
+            .feature {
+                padding: 1rem;
+            }
+
+            .services-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .service-card {
+                padding: 1rem;
+            }
+
+            /* Contact form */
+            .contact-form-container {
+                padding: 1.25rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .input-group {
+                margin-bottom: 0.75rem;
+            }
+
+            /* Footer adjustments */
+            .footer {
+                padding: 2rem 1rem 1rem;
+            }
+
+            .footer-content {
+                gap: 1.5rem;
+            }
+
+            /* Navigation adjustments */
+            .nav-container {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            /* Mobile menu improvements */
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+                border-top: 1px solid rgba(59, 130, 246, 0.1);
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0;
+                font-size: 1rem;
+            }
+
+            /* Help dialog adjustments */
+            .floating-help {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .help-trigger {
+                width: 45px;
+                height: 45px;
+            }
+
+            .help-dialog {
+                width: 250px;
+                bottom: 60px;
+            }
+        }
+
+        /* Additional optimization for smaller heights */
+        @media screen and (max-height: 700px) and (max-width: 768px) {
+            .container {
+                padding-top: 3.5rem;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .profile-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .card {
+                margin-bottom: 0.75rem;
+            }
+
+            .core-features {
+                margin: 1rem 0;
+            }
+
+            .vision-section {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+        }
+
+        /* Touch optimization */
+        @media (hover: none) {
+            .nav-links a:hover::after {
+                width: 0;
+            }
+
+            .card:hover,
+            .badge:hover,
+            .service-card:hover,
+            .feature:hover {
+                transform: none;
+            }
+
+            .submit-button:active,
+            .help-trigger:active,
+            .social-link:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* Add or update these responsive styles in your CSS */
+        @media screen and (max-width: 768px) {
+            /* Container and general spacing */
+            body {
+                padding: 0;
+            }
+
+            .container {
+                padding: 0;
+                width: 100vw;
+                overflow-x: hidden;
+            }
+
+            /* Header adjustments */
+            header {
+                margin: 0;
+                border-radius: 0;
+                padding: 2rem 1rem;
+            }
+
+            /* Card adjustments */
+            .card {
+                margin: 0;
+                border-radius: 0;
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            /* Navigation adjustments */
+            .navbar {
+                padding: 0.5rem;
+            }
+
+            .nav-container {
+                padding: 0.5rem 1rem;
+            }
+
+            .nav-links.active {
+                padding-top: 5rem;
+                height: 100vh;
+                width: 100vw;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: #000000;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 2rem;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+                color: var(--text-primary);
+            }
+
+            /* Mobile menu button */
+            .mobile-menu-btn {
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 2000;
+                font-size: 1.5rem;
+            }
+
+            /* Content sections */
+            .services-container {
+                padding: 0;
+            }
+
+            .service-card {
+                margin: 0.5rem 0;
+            }
+
+            /* Form adjustments */
+            .contact-overlay {
+                padding: 1rem 0;
+            }
+
+            .contact-form-container {
+                padding: 1rem;
+                border-radius: 0;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            /* Footer adjustments */
+            .footer {
+                padding: 2rem 1rem 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0;
+            }
+
+            /* Help dialog adjustments */
+            .floating-help {
+                bottom: 0.5rem;
+                right: 0.5rem;
+            }
+
+            .help-trigger {
+                width: 45px;
+                height: 45px;
+            }
+
+            .help-dialog {
+                width: calc(100vw - 2rem);
+                right: 1rem;
+                bottom: 60px;
+            }
+        }
+
+        /* Additional adjustments for very small screens */
+        @media screen and (max-width: 360px) {
+            .header-title {
+                font-size: 1.5rem;
+            }
+
+            .header-subtitle {
+                font-size: 1rem;
+            }
+
+            .card-title {
+                font-size: 1.2rem;
+            }
+
+            .badge {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.75rem;
+            }
+        }
+
+        /* Fix for notched phones */
+        @supports (padding-top: env(safe-area-inset-top)) {
+            .navbar {
+                padding-top: env(safe-area-inset-top);
+            }
+
+            .nav-links.active {
+                padding-top: calc(env(safe-area-inset-top) + 4rem);
+            }
+        }
+
+        /* Fix for landscape mode */
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            .nav-links.active {
+                padding-top: 4rem;
+                overflow-y: auto;
+            }
+
+            header {
+                padding: 1rem;
+            }
+
+            .profile-image {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-help">
+        <div class="help-dialog" id="helpDialog">
+            <div class="dialog-header">
+                <h3>Need Help?</h3>
+                <button class="close-dialog" onclick="toggleDialog()">×</button>
+            </div>
+            <p>Click to send us a message and get immediate assistance!</p>
+            <a href="#contact-form" class="help-button" onclick="toggleDialog()">
+                Send Message
+            </a>
+        </div>
+        <button class="help-trigger" onclick="toggleDialog()">
+            <span class="help-icon">💬</span>
+        </button>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Ishteaque A.I</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#companies">Companies</a>
+                <a href="#contact-form">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20240724_230843_663.jpg-TVrsDfTb8AmCzDcXz4rvMkCu7RCifM.jpeg" 
+                 alt="Ishteaque Ahmed Ishaqui" 
+                 class="profile-image">
+            <h1 class="header-title">Ishteaque Ahmed Ishaqui</h1>
+            <p class="header-subtitle">Founder & CEO - A&I Consultancy</p>
+            <div class="header-tags">
+                <span>Business Innovation</span>
+                <span>AI Solutions</span>
+                <span>EdTech Pioneer</span>
+            </div>
+        </header>
+
+        <div class="card" id="about">
+            <div class="card-header">
+                <span class="icon">⭐</span>
+                <h2 class="card-title">About</h2>
+            </div>
+            <p>
+                AI enthusiast and innovative entrepreneur with a strong focus on leveraging artificial intelligence and digital solutions for business transformation. Founder of A&I Academy and A&I Consultancy, demonstrating expertise in creating impactful educational and business solutions. Passionate about developing AI-driven platforms and technologies that bridge gaps in education and business operations. Combining technical knowledge with business acumen to deliver innovative solutions in EdTech and digital transformation.
+            </p>
+        </div>
+
+        <div class="card" id="skills">
+            <div class="card-header">
+                <span class="icon">🎯</span>
+                <h2 class="card-title">Skills</h2>
+            </div>
+            
+            <!-- Technical Skills -->
+            <h3 class="skills-subtitle">Technical Skills</h3>
+            <div class="badge-container">
+                <span class="badge">Accounting</span>
+                <span class="badge">Financial Management</span>
+                <span class="badge">Business Development</span>
+                <span class="badge">Digital Marketing</span>
+                <span class="badge">AI Applications</span>
+                <span class="badge">Tally ERP 9</span>
+                <span class="badge">Excel</span>
+                <span class="badge">EdTech</span>
+            </div>
+
+            <!-- Soft Skills -->
+            <h3 class="skills-subtitle">Soft Skills</h3>
+            <ul class="soft-skills-list">
+                <li>Problem-solving and analytical skills</li>
+                <li>Strong communication abilities, especially in digital environments</li>
+                <li>Entrepreneurial mindset with a focus on scaling and innovation</li>
+            </ul>
+        </div>
+
+        <div class="card" id="education">
+            <div class="card-header">
+                <span class="icon">🎓</span>
+                <h2 class="card-title">Education</h2>
+            </div>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="collapsible-header" onclick="toggleCollapse('professionalStudies')">
+                        <h3>Professional Studies</h3>
+                        <span class="collapse-icon">▼</span>
+                    </div>
+                    <div class="collapsible-content" id="professionalStudies">
+                        <ul>
+                            <li>
+                                <strong>CA Intermediate</strong>
+                                <p>Currently Pursuing</p>
+                                <p class="institution">Institute of Chartered Accountants of India</p>
+                            </li>
+                            <li>
+                                <strong>CA Foundation</strong>
+                                <p>Completed</p>
+                                <p class="institution">Institute of Chartered Accountants of India</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <h3>Academic Qualifications</h3>
+                    <ul>
+                        <li>
+                            <strong>Bachelor of Commerce (B.Com)</strong>
+                            <p class="institution">University of Calcutta</p>
+                        </li>
+                        <li>
+                            <strong>Class XII (ISC)</strong>
+                            <p class="institution">Indian School Certificate Examination</p>
+                        </li>
+                        <li>
+                            <strong>Class X (ICSE)</strong>
+                            <p class="institution">Council for the Indian School Certificate Examinations</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="education-item">
+                    <h3>Additional Qualifications</h3>
+                    <ul>
+                        <li>
+                            <strong>Artistic Skills Certification</strong>
+                            <p class="institution">Greenwave Visuals for Central Arts</p>
+                        </li>
+                        <li>
+                            <strong>Computer Diploma</strong>
+                            <p class="institution">Lions Computer Centre</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="companies">
+            <div class="card-header">
+                <span class="icon">🏢</span>
+                <h2 class="card-title">Companies</h2>
+            </div>
+            
+            <!-- A&I Consultancy Section -->
+            <div class="company-section">
+                <h3 class="company-title">
+                    <span class="icon">🌟</span>
+                    A&I Consultancy
+                </h3>
+                <div class="company-section">
+                    <strong>Transforming Businesses Through Innovation</strong>
+                    <p class="company-description">
+                        Founded in 2024, A&I Consultancy emerged from a vision to revolutionize how businesses operate in the digital age. We recognized that many organizations struggle with digital transformation and automation, often finding enterprise solutions out of reach. This inspired us to create a consultancy that delivers enterprise-grade solutions at prices that work for businesses of all sizes.
+                    </p>
+
+                    <div class="core-features">
+                        <div class="feature">
+                            <h4>AI-Powered Solutions</h4>
+                            <p>Leveraging cutting-edge artificial intelligence to automate processes and drive decision-making</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Advanced Technology</h4>
+                            <p>Utilizing modern programming languages and frameworks to build robust, scalable solutions</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Business Intelligence</h4>
+                            <p>Converting data into actionable insights for strategic business growth</p>
+                        </div>
+                    </div>
+
+                    <div class="vision-section">
+                        <h3>Our Vision</h3>
+                        <p>We envision a future where businesses of all sizes can harness the power of automation and artificial intelligence to operate efficiently, scale seamlessly, and compete effectively in the global marketplace. Our commitment is to be the bridge that connects ambitious businesses with transformative technology solutions.</p>
+                    </div>
+
+                    <div class="services-grid">
+                        <h3 style="text-align: center;">Our Services</h3>
+                        <div class="service-categories" style="justify-content: center;">
+                            <span class="service-tag">Finance</span>
+                            <span class="service-tag">Technology</span>
+                            <span class="service-tag">Business</span>
+                        </div>
+                        
+                        <div class="services-container">
+                            <div class="service-card">
+                                <h4>Accounts Management</h4>
+                                <ul>
+                                    <li>Automated bookkeeping systems</li>
+                                    <li>Real-time financial reporting</li>
+                                    <li>Tax compliance management</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card">
+                                <h4>Cost Management</h4>
+                                <ul>
+                                    <li>Expense analysis and reduction</li>
+                                    <li>Budget optimization</li>
+                                    <li>Resource allocation</li>
+                                    <li>Profitability enhancement</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card">
+                                <h4>Software Development</h4>
+                                <ul>
+                                    <li>Custom application development</li>
+                                    <li>System integration</li>
+                                    <li>API development</li>
+                                    <li>Legacy system modernization</li>
+                                </ul>
+                            </div>
+
+                            <!-- Add remaining service cards similarly -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="company-divider"></div>
+
+            <!-- A&I Academy Section -->
+            <div class="company-section">
+                <h3 class="company-title">
+                    <span class="icon">🎓</span>
+                    A&I Academy
+                </h3>
+                <div class="company-section">
+                    <strong>Where Education Meets Innovation</strong>
+                    <p class="company-description">
+                        At A&I Academy, we connect students in need of quality tuition with experienced teachers through an innovative referral-based system. Acting as the intermediary, we ensure that teachers, students, and referrers are all supported with seamless service and timely payments.
+                    </p>
+
+                    <div class="core-features">
+                        <div class="feature">
+                            <h4>Innovative Ideas</h4>
+                            <p>Revolutionizing traditional education through digital innovation</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Quality Education</h4>
+                            <p>Ensuring high standards through certified teachers and structured learning</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Collaborative Learning</h4>
+                            <p>Creating an ecosystem that benefits students, teachers, and referrers</p>
+                        </div>
+                    </div>
+
+                    <div class="vision-section">
+                        <h3>Our Vision & Mission</h3>
+                        <p>Making quality education accessible while creating opportunities for teachers and referrers. Building a collaborative educational ecosystem that benefits everyone involved.</p>
+                    </div>
+
+                    <div class="services-grid">
+                        <h3>Platform Features</h3>
+                        <div class="service-categories">
+                            <span class="service-tag">Students</span>
+                            <span class="service-tag">Teachers</span>
+                            <span class="service-tag">Referrers</span>
+                        </div>
+                        
+                        <div class="services-container">
+                            <div class="service-card">
+                                <h4>For Students</h4>
+                                <ul>
+                                    <li>Quality Education</li>
+                                    <li>Certified Teachers</li>
+                                    <li>Free Study Material</li>
+                                    <li>Performance Tracking</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card">
+                                <h4>For Teachers</h4>
+                                <ul>
+                                    <li>Free Registration</li>
+                                    <li>Competitive Pay</li>
+                                    <li>Flexible Hours</li>
+                                    <li>Regular Students</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-card">
+                                <h4>For Referrers</h4>
+                                <ul>
+                                    <li>Zero Investment</li>
+                                    <li>Monthly Commission</li>
+                                    <li>Lifetime Earnings</li>
+                                    <li>Easy Referral System</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offer-section">
+                        <div class="service-card" style="text-align: center;">
+                            <h4>Join A&I Academy Today!</h4>
+                            <p style="margin: 1rem 0;">Start your journey with us and be part of the educational revolution</p>
+                            <a href="https://sites.google.com/view/ai-academyonline/home" 
+                               target="_blank" 
+                               class="plan-button">
+                                Visit Website →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-overlay" id="contact-form">
+            <div class="contact-form-container">
+                <div class="form-header">
+                    <h2>Get In Touch</h2>
+                    <p>Fill out the form below and we'll get back to you shortly.</p>
+                </div>
+                
+                <form class="modern-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="emailAddress">Email Address *</label>
+                            <input type="email" id="emailAddress" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phoneNumber">
+                        </div>
+                        <div class="input-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="serviceInterest">Service Interest *</label>
+                        <select id="serviceInterest" required>
+                            <option value="">Select a Service</option>
+                            <option value="business">Business Consultancy</option>
+                            <option value="education">Educational Services</option>
+                            <option value="software">Software Development</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        Send Message
+                        <span class="button-icon">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>📧 ishteaqueahmed123@gmail.com</p>
+                <p> +91 - 8617273074</p>
+                <p>📍 Kolkata, West Bengal, India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Companies</h3>
+                <a href="#">A&I Consultancy</a>
+                <a href="https://sites.google.com/view/ai-academyonline/home">A&I Academy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ishteaque-a-671950203/" target="_blank" class="social-link">LinkedIn</a>
+                    <a href="https://www.instagram.com/i_ishteaqui/" target="_blank" class="social-link">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ishteaque A.I. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observe all cards
+        document.querySelectorAll('.card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Handle loading state
+        window.addEventListener('load', () => {
+            document.querySelector('.loading').style.display = 'none';
+        });
+
+        // Smooth scroll for mobile devices
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update the mobile menu JavaScript
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const menuLinks = document.querySelectorAll('.nav-links a');
+
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+                // Add small delay to allow smooth scrolling
+                setTimeout(() => {
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && 
+                !navLinks.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target)) {
+                toggleMenu();
+            }
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+
+        function toggleDialog() {
+            const dialog = document.getElementById('helpDialog');
+            dialog.classList.toggle('active');
+        }
+
+        // Close dialog when clicking outside
+        document.addEventListener('click', (e) => {
+            const dialog = document.getElementById('helpDialog');
+            const trigger = document.querySelector('.help-trigger');
+            if (!dialog.contains(e.target) && !trigger.contains(e.target)) {
+                dialog.classList.remove('active');
+            }
+        });
+
+        function toggleCollapse(id) {
+            const content = document.getElementById(id);
+            const icon = content.previousElementSibling.querySelector('.collapse-icon');
+            
+            content.classList.toggle('active');
+            icon.classList.toggle('active');
+            
+            // Optional: Close other sections when opening one
+            // document.querySelectorAll('.collapsible-content').forEach(item => {
+            //     if (item.id !== id) {
+            //         item.classList.remove('active');
+            //         item.previousElementSibling.querySelector('.collapse-icon').classList.remove('active');
+            //     }
+            // });
+        }
+
+        // Optional: Open Professional Studies section by default
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     toggleCollapse('professionalStudies');
+        // });
+    </script>
+</body>
+</html> 
