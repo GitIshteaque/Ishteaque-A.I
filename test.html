@@ -2,2640 +2,2417 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ishteaque Ahmed Ishaqui - Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-primary: #000000;
-            --bg-secondary: #111111;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent: #3b82f6;
-            --card-hover: #1a1a1a;
-            --badge-bg: #222222;
-            --animation-timing: 0.3s;
-        }
-
-        body {
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            overflow-x: hidden;
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            padding: 2rem;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Container styles */
-        .container {
-            width: 100%;
-            max-width: 100%;
-            padding: 0;
-            margin: 0;
-            opacity: 0.8;
-            animation: fadeIn 0.8s ease-out forwards;
-            padding: 1rem;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Header styles */
-        header {
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            margin: 1rem;
-            border-radius: 0.5rem;
-            background: var(--bg-secondary);
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-            transform: translateX(-100%);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            100% { transform: translateX(100%); }
-        }
-
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            object-fit: cover;
-            border: 4px solid var(--accent);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
-            transition: transform 0.3s ease;
-            transform-origin: center;
-            animation: pulseGlow 3s infinite;
-        }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
-            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); }
-            100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05);
-        }
-
-        .header-title {
-            font-size: 2.75rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-            letter-spacing: -0.5px;
-        }
-
-        .header-subtitle {
-            font-size: 1.5rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .header-tags {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .header-tags span {
-            background: rgba(59, 130, 246, 0.1);
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        /* Card styles */
-        .card {
-            background: #1a1a1a; /* Dark grey background */
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
-            width: 100%;
-            max-width: 800px; /* Increased max-width */
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.5s;
-        }
-
-        .card:hover::after {
-            transform: translateX(100%);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
-            background: var(--card-hover);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid rgba(59, 130, 246, 0.2);
-            padding-bottom: 1rem;
-        }
-
-        .card-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.5px;
-        }
-
-        .icon {
-            font-size: 1.5rem;
-            margin-right: 0.75rem;
-        }
-
-        /* Badge styles */
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .badge {
-            position: relative;
-            overflow: hidden;
-            background: var(--badge-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .badge:hover {
-            transform: translateY(-3px);
-            background: var(--accent);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        /* List styles */
-        ul {
-            list-style: none;
-            margin-left: 0.5rem;
-        }
-
-        li {
-            margin-bottom: 1rem;
-            position: relative;
-            padding-left: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        li:hover {
-            transform: translateX(10px);
-        }
-
-        strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        p {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            body {
-                padding: 0.5rem;
-            }
-
-            .container {
-                padding: 0.5rem;
-            }
-
-            header {
-                padding: 1.5rem 1rem;
-                margin-bottom: 2rem;
-            }
-
-            .header-title {
-                font-size: 2rem;
-            }
-
-            .header-subtitle {
-                font-size: 1.25rem;
-            }
-
-            .card {
-                margin: 10px;
-                border-radius: 12px;
-                padding: 20px;
-            }
-
-            .card-title {
-                font-size: 1.5rem;
-            }
-
-            .badge-container {
-                gap: 0.5rem;
-            }
-
-            .badge {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Small Mobile Devices */
-        @media (max-width: 480px) {
-            .header-title {
-                font-size: 1.5rem;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-
-            .card {
-                padding: 1rem;
-            }
-
-            .card-title {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Landscape Mode */
-        @media (max-height: 600px) and (orientation: landscape) {
-            .container {
-                padding: 0.5rem;
-            }
-
-            header {
-                padding: 1rem;
-            }
-
-            .profile-image {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 1rem;
-            }
-        }
-
-        /* Dark Mode Support */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-primary: #000000;
-                --bg-secondary: #111111;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-                color: black;
-            }
-
-            .card {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-
-            .profile-image {
-                print-color-adjust: exact;
-            }
-        }
-
-        /* Loading Animation */
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--bg-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            animation: fadeOut 0.5s ease-out forwards 1s;
-        }
-
-        @keyframes fadeOut {
-            to { opacity: 0; visibility: hidden; }
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Focus States for Accessibility */
-        *:focus {
-            outline: 2px solid var(--accent);
-            outline-offset: 2px;
-        }
-
-        /* Touch Device Optimizations */
-        @media (hover: none) {
-            .card:hover {
-                transform: none;
-            }
-
-            .badge:hover {
-                transform: none;
-            }
-        }
-
-        /* Company Section Styles */
-        .company-section {
-            padding: 1rem 0;
-        }
-
-        .company-description {
-            font-size: 15px;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 20px;
-        }
-
-        .company-details {
-            background: var(--bg-primary);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .company-link {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .company-link::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.5s ease;
-        }
-
-        .company-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        .company-link:hover::after {
-            transform: translateX(100%);
-        }
-
-        .company-highlights {
-            margin-top: 1.5rem;
-        }
-
-        .company-highlights h4 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .company-description {
-                font-size: 1rem;
-            }
-
-            .company-details {
-                padding: 1rem;
-            }
-
-            .company-link {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        .core-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .feature {
-            background: #1a1a1a; /* Match the main card background */
-            border-radius: 12px;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature h4 {
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
-        }
-
-        .vision-section {
-            background: #1a1a1a; /* Match the main card background */
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .vision-section h3 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .services-grid {
-            margin-top: 2rem;
-        }
-
-        .service-categories {
-            display: flex;
-            gap: 1rem;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-        }
-
-        .service-tag {
-            background: var(--accent);
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .service-card {
-            background: #1a1a1a; /* Match the main card background */
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
-        }
-
-        .service-card h4 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 768px) {
-            .core-features {
-                grid-template-columns: 1fr;
-            }
-
-            .services-container {
-                grid-template-columns: 1fr;
-            }
-
-            .vision-section {
-                padding: 1.5rem;
-            }
-        }
-
-        .academy-showcase {
-            background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary));
-        }
-
-        .academy-hero {
-            text-align: center;
-            padding: 2rem 0;
-            margin-bottom: 3rem;
-        }
-
-        .academy-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--accent), #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .academy-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .academy-pillars {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .academy-pillars span {
-            background: var(--bg-primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            font-weight: 500;
-            color: var(--accent);
-        }
-
-        .offer-section {
-            margin: 3rem 0;
-        }
-
-        .offer-banner {
-            background: linear-gradient(45deg, var(--accent), #60a5fa);
-            padding: 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .offer-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: shimmer 2s infinite;
-        }
-
-        .offer-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 1rem 0;
-        }
-
-        .offer-features {
-            margin: 1.5rem 0;
-            font-size: 1.1rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            padding: 1rem 2rem;
-            border-radius: 2rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .plans-grid {
-            margin: 3rem 0;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .plans-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .plan-card {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 1rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .plan-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.2);
-        }
-
-        .plan-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin: 1rem 0;
-        }
-
-        .plan-features {
-            margin: 1.5rem 0;
-            text-align: left;
-        }
-
-        .plan-button {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .plan-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .step {
-            text-align: center;
-            padding: 2rem;
-            background: var(--bg-secondary);
-            border-radius: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateY(-5px);
-        }
-
-        .step-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: #1a1a1a; /* Match the main card background */
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .academy-title {
-                font-size: 2rem;
-            }
-
-            .academy-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .offer-banner {
-                padding: 1.5rem;
-            }
-
-            .plans-container {
-                grid-template-columns: 1fr;
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .company-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 24px;
-            font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .company-title .icon {
-            color: var(--accent);
-            font-size: 2rem;
-        }
-
-        .company-divider {
-            height: 1px;
-            background: rgba(255, 255, 255, 0.1);
-            margin: 24px 0;
-        }
-
-        .company-section {
-            margin-bottom: 24px;
-        }
-
-        /* Update existing styles to work with new structure */
-        .company-section .academy-hero {
-            margin-top: 2rem;
-        }
-
-        .company-section:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Navbar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #000000;
-            z-index: 1000;
-            padding: 0.5rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-container {
-            width: 100%;
-            padding: 0 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Footer Styles */
-        .footer {
-            background: var(--bg-secondary);
-            padding: 2rem 1rem;
-            margin: 0;
-            border-top: 1px solid rgba(59, 130, 246, 0.1);
-            width: 100%;
-        }
-
-        .footer-content {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .footer-section h3 {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-section p {
-            color: var(--text-secondary);
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.75rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-link {
-            padding: 0.5rem 1rem;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--accent);
-            color: white !important;
-            border-color: var(--accent);
-        }
-
-        .footer-bottom {
-            max-width: 64rem;
-            margin: 3rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(59, 130, 246, 0.1);
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Update container padding for navbar */
-        .container {
-            padding-top: 60px; /* Height of navbar */
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 60px; /* Height of navbar */
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: #000000;
-                padding: 1rem;
-                display: none;
-                flex-direction: column;
-                gap: 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links a {
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                color: var(--text-secondary);
-            }
-
-            .mobile-menu-btn {
-                display: block;
-                background: transparent;
-                border: none;
-                color: var(--text-primary);
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-
-            /* Remove animation delays for smoother opening */
-            .nav-links a {
-                opacity: 1;
-                transform: none;
-                transition: color 0.3s ease, padding-left 0.3s ease;
-            }
-
-            .nav-links.active a {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        /* Mobile Menu Animation */
-        @keyframes slideIn {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .contact-info h3,
-        .contact-form h3 {
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .contact-details {
-            margin: 2rem 0;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-        }
-
-        .contact-item h4 {
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-item p {
-            color: var(--text-secondary);
-        }
-
-        .social-connect h4 {
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.75rem 1.5rem;
-            background: var(--bg-primary);
-            border: 1px solid var(--accent);
-            border-radius: 2rem;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .contact-form {
-            background: var(--bg-primary);
-            padding: 2rem;
-            border-radius: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 0.5rem;
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--accent);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--accent);
-            border: none;
-            border-radius: 0.5rem;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .contact-form {
-                padding: 1.5rem;
-            }
-        }
-
-        .services-grid h3 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        .service-categories {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .contact-intro {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .contact-details {
-            margin: 2rem 0;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            background: var(--bg-primary);
-            border-radius: 0.75rem;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(10px);
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-        }
-
-        .contact-item h4 {
-            color: var(--accent);
-            margin-bottom: 0.25rem;
-            font-size: 1.1rem;
-        }
-
-        .social-connect {
-            margin-top: 2rem;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--bg-primary);
-            border: 1px solid var(--accent);
-            border-radius: 2rem;
-            color: var(--text-primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .contact-form {
-            background: var(--bg-primary);
-            padding: 2rem;
-            border-radius: 1rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 0.5rem;
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--accent);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-secondary);
-            opacity: 0.7;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--accent);
-            border: none;
-            border-radius: 0.5rem;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        .btn-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .submit-btn:hover .btn-icon {
-            transform: translateX(5px);
-        }
-
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .contact-form {
-                padding: 1.5rem;
-            }
-        }
-
-        .contact-overlay {
-            background: var(--bg-secondary);
-            padding: 2rem 1rem;
-            margin-top: 2rem;
-            margin-bottom: 0;
-            border-bottom: none;
-            width: 100%;
-            margin: 0;
-        }
-
-        .contact-form-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg-primary);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .form-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .form-header h2 {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-header p {
-            color: var(--text-secondary);
-        }
-
-        .modern-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .input-group label {
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .input-group input,
-        .input-group select,
-        .input-group textarea {
-            padding: 0.75rem 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 0.5rem;
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .input-group input:focus,
-        .input-group select:focus,
-        .input-group textarea:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
-            outline: none;
-        }
-
-        .submit-button {
-            background: var(--accent);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        .button-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .submit-button:hover .button-icon {
-            transform: translateX(5px);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .contact-overlay {
-                padding: 1rem;
-            }
-
-            .contact-form-container {
-                padding: 1rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .form-header h2 {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Animation for form elements */
-        .input-group {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.5s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .input-group:nth-child(1) { animation-delay: 0.1s; }
-        .input-group:nth-child(2) { animation-delay: 0.2s; }
-        .input-group:nth-child(3) { animation-delay: 0.3s; }
-        .input-group:nth-child(4) { animation-delay: 0.4s; }
-
-        .floating-help {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1000;
-        }
-
-        .help-trigger {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--accent);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .help-trigger:hover {
-            transform: scale(1.1);
-        }
-
-        .help-icon {
-            font-size: 1.5rem;
-        }
-
-        .help-dialog {
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 300px;
-            background: var(--bg-secondary);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transform: scale(0);
-            opacity: 0;
-            transform-origin: bottom right;
-            transition: all 0.3s ease;
-        }
-
-        .help-dialog.active {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .dialog-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .dialog-header h3 {
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            margin: 0;
-        }
-
-        .close-dialog {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0;
-            line-height: 1;
-        }
-
-        .help-dialog p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .help-button {
-            display: inline-block;
-            width: 100%;
-            padding: 0.75rem;
-            background: var(--accent);
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 0.5rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .help-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .floating-help {
-                bottom: 1rem;
-                right: 1rem;
-            }
-
-            .help-trigger {
-                width: 50px;
-                height: 50px;
-            }
-
-            .help-dialog {
-                width: 280px;
-                bottom: 70px;
-            }
-        }
-
-        .skills-subtitle {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin: 2rem 0 1rem;
-            font-weight: 600;
-        }
-
-        .skills-subtitle:first-of-type {
-            margin-top: 1rem;
-        }
-
-        .soft-skills-list {
-            margin-top: 1rem;
-        }
-
-        .soft-skills-list li {
-            color: var(--text-primary);
-            margin-bottom: 0.75rem;
-            transition: transform 0.3s ease;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .soft-skills-list li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
-
-        .soft-skills-list li:hover {
-            transform: translateX(10px);
-            color: var(--accent);
-        }
-
-        @media (max-width: 768px) {
-            .skills-subtitle {
-                font-size: 1.1rem;
-                margin: 1.5rem 0 0.75rem;
-            }
-        }
-
-        .education-timeline {
-            padding: 1rem 0;
-        }
-
-        .education-item {
-            margin-bottom: 2rem;
-        }
-
-        .education-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .education-item h3 {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        .education-item ul {
-            margin-left: 0;
-        }
-
-        .education-item li {
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .education-item li:hover {
-            transform: translateX(10px);
-        }
-
-        .education-item strong {
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .education-item p {
-            color: var(--text-secondary);
-            margin-bottom: 0.25rem;
-        }
-
-        .institution {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-            .education-item h3 {
-                font-size: 1.1rem;
-            }
-
-            .education-item strong {
-                font-size: 1rem;
-            }
-        }
-
-        .collapsible-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            padding: 0.5rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .collapsible-header:hover {
-            color: var(--accent);
-        }
-
-        .collapse-icon {
-            font-size: 0.8rem;
-            transition: transform 0.3s ease;
-        }
-
-        .collapse-icon.active {
-            transform: rotate(180deg);
-        }
-
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            opacity: 0;
-        }
-
-        .collapsible-content.active {
-            max-height: 500px; /* Adjust based on content */
-            opacity: 1;
-            transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
-        }
-
-        /* Add or update these responsive styles in your style section */
-        @media screen and (max-width: 768px) and (aspect-ratio: 16/9) {
-            /* Container adjustments */
-            .container {
-                padding-top: 4rem;
-                max-width: 100%;
-            }
-
-            /* Header adjustments */
-            header {
-                padding: 1.5rem 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .profile-image {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 1rem;
-            }
-
-            .header-title {
-                font-size: 1.8rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .header-subtitle {
-                font-size: 1rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .header-tags span {
-                padding: 0.3rem 1rem;
-                font-size: 0.8rem;
-            }
-
-            /* Card adjustments */
-            .card {
-                padding: 1.25rem;
-                margin-bottom: 1rem;
-                border-radius: 0.75rem;
-            }
-
-            .card-header {
-                margin-bottom: 1rem;
-            }
-
-            .card-title {
-                font-size: 1.3rem;
-            }
-
-            /* Skills section */
-            .badge-container {
-                gap: 0.5rem;
-            }
-
-            .badge {
-                padding: 0.3rem 0.8rem;
-                font-size: 0.8rem;
-            }
-
-            /* Companies section */
-            .core-features {
-                gap: 1rem;
-            }
-
-            .feature {
-                padding: 1rem;
-            }
-
-            .services-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .service-card {
-                padding: 1rem;
-            }
-
-            /* Contact form */
-            .contact-form-container {
-                padding: 1.25rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
-            }
-
-            .input-group {
-                margin-bottom: 0.75rem;
-            }
-
-            /* Footer adjustments */
-            .footer {
-                padding: 2rem 1rem 1rem;
-            }
-
-            .footer-content {
-                gap: 1.5rem;
-            }
-
-            /* Navigation adjustments */
-            .nav-container {
-                padding: 0.75rem 1rem;
-            }
-
-            .logo-text {
-                font-size: 1.2rem;
-            }
-
-            /* Mobile menu improvements */
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg-secondary);
-                padding: 1rem;
-                flex-direction: column;
-                gap: 1rem;
-                border-top: 1px solid rgba(59, 130, 246, 0.1);
-            }
-
-            .nav-links a {
-                padding: 0.5rem 0;
-                font-size: 1rem;
-            }
-
-            /* Help dialog adjustments */
-            .floating-help {
-                bottom: 1rem;
-                right: 1rem;
-            }
-
-            .help-trigger {
-                width: 45px;
-                height: 45px;
-            }
-
-            .help-dialog {
-                width: 250px;
-                bottom: 60px;
-            }
-        }
-
-        /* Additional optimization for smaller heights */
-        @media screen and (max-height: 700px) and (max-width: 768px) {
-            .container {
-                padding-top: 3.5rem;
-            }
-
-            header {
-                padding: 1rem;
-            }
-
-            .profile-image {
-                width: 80px;
-                height: 80px;
-            }
-
-            .card {
-                margin-bottom: 0.75rem;
-            }
-
-            .core-features {
-                margin: 1rem 0;
-            }
-
-            .vision-section {
-                padding: 1rem;
-                margin: 1rem 0;
-            }
-        }
-
-        /* Touch optimization */
-        @media (hover: none) {
-            .nav-links a:hover::after {
-                width: 0;
-            }
-
-            .card:hover,
-            .badge:hover,
-            .service-card:hover,
-            .feature:hover {
-                transform: none;
-            }
-
-            .submit-button:active,
-            .help-trigger:active,
-            .social-link:active {
-                transform: scale(0.98);
-            }
-        }
-
-        /* Add or update these responsive styles in your CSS */
-        @media screen and (max-width: 768px) {
-            /* Container and general spacing */
-            body {
-                padding: 0;
-            }
-
-            .container {
-                padding: 0;
-                width: 100vw;
-                overflow-x: hidden;
-            }
-
-            /* Header adjustments */
-            header {
-                margin: 0;
-                border-radius: 0;
-                padding: 2rem 1rem;
-            }
-
-            /* Card adjustments */
-            .card {
-                margin: 0;
-                border-radius: 0;
-                padding: 1.5rem;
-                margin-bottom: 1rem;
-            }
-
-            /* Navigation adjustments */
-            .navbar {
-                padding: 0.5rem;
-            }
-
-            .nav-container {
-                padding: 0.5rem 1rem;
-            }
-
-            .nav-links.active {
-                padding-top: 5rem;
-                height: 100vh;
-                width: 100vw;
-                position: fixed;
-                top: 0;
-                left: 0;
-                background: #000000;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                gap: 2rem;
-            }
-
-            .nav-links a {
-                font-size: 1.2rem;
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-                color: var(--text-primary);
-            }
-
-            /* Mobile menu button */
-            .mobile-menu-btn {
-                position: fixed;
-                top: 1rem;
-                right: 1rem;
-                z-index: 2000;
-                font-size: 1.5rem;
-            }
-
-            /* Content sections */
-            .services-container {
-                padding: 0;
-            }
-
-            .service-card {
-                margin: 0.5rem 0;
-            }
-
-            /* Form adjustments */
-            .contact-overlay {
-                padding: 1rem 0;
-            }
-
-            .contact-form-container {
-                padding: 1rem;
-                border-radius: 0;
-            }
-
-            .form-row {
-                flex-direction: column;
-            }
-
-            /* Footer adjustments */
-            .footer {
-                padding: 2rem 1rem 1rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 0;
-            }
-
-            /* Help dialog adjustments */
-            .floating-help {
-                bottom: 0.5rem;
-                right: 0.5rem;
-            }
-
-            .help-trigger {
-                width: 45px;
-                height: 45px;
-            }
-
-            .help-dialog {
-                width: calc(100vw - 2rem);
-                right: 1rem;
-                bottom: 60px;
-            }
-        }
-
-        /* Additional adjustments for very small screens */
-        @media screen and (max-width: 360px) {
-            .header-title {
-                font-size: 1.5rem;
-            }
-
-            .header-subtitle {
-                font-size: 1rem;
-            }
-
-            .card-title {
-                font-size: 1.2rem;
-            }
-
-            .badge {
-                font-size: 0.75rem;
-                padding: 0.25rem 0.75rem;
-            }
-        }
-
-        /* Fix for notched phones */
-        @supports (padding-top: env(safe-area-inset-top)) {
-            .navbar {
-                padding-top: env(safe-area-inset-top);
-            }
-
-            .nav-links.active {
-                padding-top: calc(env(safe-area-inset-top) + 4rem);
-            }
-        }
-
-        /* Fix for landscape mode */
-        @media screen and (max-height: 500px) and (orientation: landscape) {
-            .nav-links.active {
-                padding-top: 4rem;
-                overflow-y: auto;
-            }
-
-            header {
-                padding: 1rem;
-            }
-
-            .profile-image {
-                width: 80px;
-                height: 80px;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, i/* Add these optimizations at the top of your CSS file */
+
+/* Use hardware acceleration for animations */
+.service-card,
+.benefit-card,
+.expertise-item,
+.scroll-to-top,
+.btn {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Use more efficient box-shadow */
+.card,
+.modal-content,
+.contact-card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+:root {
+    --primary-color: #73ff00;
+    --secondary-color: #ffffff;
+    --accent-color: #0055ff;
+    --text-color: #1a1a1a;
+    --text-light: #666666;
+    --text-white: #ffffff;
+    --light-gray: #f9fafb;
+    --white: #ffffff;
+    --dark: #111827;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --heading-line-height: 1.2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header Styles */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333333;
+    z-index: 50;
+}
+
+.navbar {
+    height: 64px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.logo-text:hover {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 8rem 0;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero {
+        padding: 12rem 0;
+    }
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    color: var(--text-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+}
+
+.hero-content p {
+    color: var(--text-white);
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    margin-left: 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 3rem 5%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-white);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .nav-links a {
+        color: #000000;
+    }
+}
+
+/* About Section Styles */
+.about {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    position: relative;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 10px auto;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-text h3 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.expertise-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.expertise-item:hover {
+    transform: translateY(-5px);
+}
+
+.expertise-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.expertise-item h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.vision-statement {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+}
+
+.vision-statement h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Services Section Styles */
+.services {
+    background-color: var(--white);
+    padding: 3rem 0;
+}
+
+.services-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.tab-trigger {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    background: none;
+    color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tab-trigger.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.tab-trigger:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.service-card {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: relative;
+    background: var(--white);
+    z-index: 1;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-front,
+.service-details {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+}
+
+.service-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-front i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-front h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.service-front p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.learn-more {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.service-details {
+    transform: rotateY(180deg);
+    background-color: var(--primary-color);
+    color: var(--white);
+    overflow-y: auto;
+}
+
+.service-details h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.service-details ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.service-details ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-details ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.close-details {
+    background-color: var(--accent-color);
+    border: none;
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-details:hover {
+    background-color: var(--secondary-color);
+}
+
+.service-card.flipped .service-front {
+    transform: rotateY(180deg);
+}
+
+.service-card.flipped .service-details {
+    transform: rotateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services {
+        padding: 60px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        height: auto;
+        min-height: 300px;
+    }
+}
+
+/* Why Choose Us Section Styles */
+.why-us {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.benefit-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: var(--white);
+    z-index: 1;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.benefit-card:hover::before {
+    opacity: 1;
+}
+
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.benefit-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.benefit-features {
+    list-style: none;
+    margin-top: auto;
+}
+
+.benefit-features li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-color);
+}
+
+.benefit-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .why-us {
+        padding: 60px 0;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-card {
+        text-align: center;
+    }
+}
+
+/* Portfolio Section Styles */
+.portfolio {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    background: none;
+    color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.case-study-card {
+    background-color: transparent;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    box-shadow: none;
+    position: relative;
+    background: var(--white);
+    z-index: 1;
+}
+
+.case-study-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.case-study-card:hover::before {
+    opacity: 1;
+}
+
+.case-study-card:hover {
+    transform: translateY(-5px);
+}
+
+.case-study-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.case-study-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.case-study-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.case-study-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: transparent;
+}
+
+.case-study-content h3 {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.client {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.result-item {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.result-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.result-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
+.view-case-study {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.view-case-study:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .case-studies-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .results {
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+
+    .result-item {
+        padding: 0.75rem;
+    }
+
+    .result-number {
+        font-size: 1.75rem;
+    }
+}
+
+/* Contact Section Styles */
+.contact {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.contact-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    background: var(--white);
+    z-index: 1;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contact-card:hover::before {
+    opacity: 1;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.contact-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.contact-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form-wrapper {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    line-height: 1.5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Form validation styles */
+.form-group input:invalid,
+.form-group select:invalid,
+.form-group textarea:invalid {
+    border-color: #ff4444;
+}
+
+/* Success message styles */
+.success-message {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smooth Scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Search Functionality Styles */
+.search-container {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-box {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #333333;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-box::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #000000;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    border: 1px solid #333333;
+}
+
+.hamburger:hover .mobile-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    background-color: #333333;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-container {
+        max-width: 200px;
+    }
+}
+
+/* Page Loading Animation */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--light-gray);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    background-color: var(--secondary-color);
+}
+
+/* Enhanced Animation Effects */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section Transitions */
+.section-transition {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-transition::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 48%, var(--light-gray) 49%, var(--light-gray) 51%, transparent 52%);
+    z-index: 1;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #ffffff;
+        --text-light: #a3a3a3;
+        --light-gray: #1f2937;
+        --white: #111827;
+    }
+
+    body {
+        background-color: var(--dark);
+    }
+
+    p {
+        color: var(--text-light);
+    }
+}
+
+/* Update Services Grid Styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.service-card {
+    position: relative;
+    min-height: 350px;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    perspective: 1000px;
+}
+
+.service-front,
+.service-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    border-radius: 15px;
+}
+
+.service-front {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.service-front i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-front h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.service-front p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.service-details {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.service-details h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.service-details ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.service-details ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-details ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--white);
+}
+
+.learn-more,
+.close-details {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: auto;
+}
+
+.learn-more {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.close-details {
+    background-color: var(--white);
+    color: var(--primary-color);
+    margin-top: auto;
+    align-self: center;
+}
+
+.service-card.flipped .service-front {
+    transform: rotateY(-180deg);
+}
+
+.service-card.flipped .service-details {
+    transform: rotateY(0);
+}
+
+/* Hover effects */
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.learn-more:hover,
+.close-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: 300px;
+    }
+}
+
+/* Update background colors for all sections */
+.about,
+.services,
+.why-us,
+.portfolio,
+.contact {
+    background-color: var(--light-gray);
+    padding: 100px 0;
+}
+
+/* Update card backgrounds for better contrast */
+.expertise-item,
+.service-card,
+.benefit-card,
+.case-study-card,
+.contact-card,
+.contact-form-wrapper {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Add subtle section separators */
+.about::after,
+.services::after,
+.why-us::after,
+.portfolio::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+/* Ensure consistent spacing */
+.section-title {
+    margin-bottom: 4rem;
+}
+
+/* Update container background for consistency */
+.container {
+    background-color: transparent;
+}
+
+/* Section Dividers */
+.section-divider {
+    height: 4px;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    margin: 0;
+    opacity: 0.5;
+}
+
+/* Add relative positioning to sections for divider placement */
+.about,
+.services,
+.why-us,
+.portfolio,
+.contact {
+    position: relative;
+}
+
+/* Update section spacing */
+.about,
+.services,
+.why-us,
+.portfolio,
+.contact {
+    padding: 80px 0;
+    margin: 2rem 0;
+    border-radius: 0 0 50px 50px;
+}
+
+/* Add subtle shadow to sections */
+.about::after,
+.services::after,
+.why-us::after,
+.portfolio::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+    pointer-events: none;
+}
+
+/* Moving Gradient Styles */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Apply to hero section */
+.hero {
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+/* Apply to section dividers */
+.section-divider {
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    height: 4px;
+    margin: 0;
+    opacity: 0.5;
+}
+
+/* Add gradient border effect to cards */
+.service-card,
+.benefit-card,
+.case-study-card {
+    position: relative;
+    background: var(--white);
+    z-index: 1;
+}
+
+.service-card::before,
+.benefit-card::before,
+.case-study-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover::before,
+.benefit-card:hover::before,
+.case-study-card:hover::before {
+    opacity: 1;
+}
+
+/* Add gradient to section titles */
+.section-title {
+    background: linear-gradient(
+        -45deg,
+        var(--primary-color),
+        var(--accent-color),
+        var(--secondary-color),
+        #9c4dcc
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+/* Sonic Boom Animation Styles */
+@keyframes sonicBoom {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.section-transition-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sonic-boom {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(
+        circle,
+        var(--primary-color),
+        var(--accent-color),
+        transparent
+    );
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.sonic-boom.active {
+    animation: sonicBoom 0.5s ease-out forwards;
+}
+
+/* Add transition effects to sections */
+.about,
+.services,
+.why-us,
+.portfolio,
+.contact {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.about.visible,
+.services.visible,
+.why-us.visible,
+.portfolio.visible,
+.contact.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Enhance section dividers with animation */
+.section-divider {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    to {
+        left: 100%;
+    }
+}
+  nitial-scale=1.0">
+    <title>A&I Consultancy Private Limited</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="images/hero-bg.jpg" as="image">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
-    <div class="floating-help">
-        <div class="help-dialog" id="helpDialog">
-            <div class="dialog-header">
-                <h3>Need Help?</h3>
-                <button class="close-dialog" onclick="toggleDialog()">×</button>
-            </div>
-            <p>Click to send us a message and get immediate assistance!</p>
-            <a href="#contact-form" class="help-button" onclick="toggleDialog()">
-                Send Message
-            </a>
-        </div>
-        <button class="help-trigger" onclick="toggleDialog()">
-            <span class="help-icon">💬</span>
-        </button>
+    <div class="loader">
+        <div class="loader-spinner"></div>
     </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">Ishteaque A.I</span>
-            </div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#education">Education</a>
-                <a href="#companies">Companies</a>
-                <a href="#contact-form">Contact</a>
-            </div>
-            <button class="mobile-menu-btn">☰</button>
-        </div>
-    </nav>
-
-    <div class="container">
-        <header>
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20240724_230843_663.jpg-TVrsDfTb8AmCzDcXz4rvMkCu7RCifM.jpeg" 
-                 alt="Ishteaque Ahmed Ishaqui" 
-                 class="profile-image">
-            <h1 class="header-title">Ishteaque Ahmed Ishaqui</h1>
-            <p class="header-subtitle">Founder & CEO - A&I Consultancy</p>
-            <div class="header-tags">
-                <span>Business Innovation</span>
-                <span>AI Solutions</span>
-                <span>EdTech Pioneer</span>
-            </div>
-        </header>
-
-        <div class="card" id="about">
-            <div class="card-header">
-                <span class="icon">⭐</span>
-                <h2 class="card-title">About</h2>
-            </div>
-            <p>
-                AI enthusiast and innovative entrepreneur with a strong focus on leveraging artificial intelligence and digital solutions for business transformation. Founder of A&I Academy and A&I Consultancy, demonstrating expertise in creating impactful educational and business solutions. Passionate about developing AI-driven platforms and technologies that bridge gaps in education and business operations. Combining technical knowledge with business acumen to deliver innovative solutions in EdTech and digital transformation.
-            </p>
-        </div>
-
-        <div class="card" id="skills">
-            <div class="card-header">
-                <span class="icon">🎯</span>
-                <h2 class="card-title">Skills</h2>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home" class="logo-text">A&I consultancy</a>
             </div>
             
-            <!-- Technical Skills -->
-            <h3 class="skills-subtitle">Technical Skills</h3>
-            <div class="badge-container">
-                <span class="badge">Accounting</span>
-                <span class="badge">Financial Management</span>
-                <span class="badge">Business Development</span>
-                <span class="badge">Digital Marketing</span>
-                <span class="badge">AI Applications</span>
-                <span class="badge">Tally ERP 9</span>
-                <span class="badge">Excel</span>
-                <span class="badge">EdTech</span>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search...">
+                <div class="search-results"></div>
             </div>
 
-            <!-- Soft Skills -->
-            <h3 class="skills-subtitle">Soft Skills</h3>
-            <ul class="soft-skills-list">
-                <li>Problem-solving and analytical skills</li>
-                <li>Strong communication abilities, especially in digital environments</li>
-                <li>Entrepreneurial mindset with a focus on scaling and innovation</li>
-            </ul>
-        </div>
-
-        <div class="card" id="education">
-            <div class="card-header">
-                <span class="icon">🎓</span>
-                <h2 class="card-title">Education</h2>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <div class="mobile-menu">
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#why-us">Why Choose Us</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
-            <div class="education-timeline">
-                <div class="education-item">
-                    <div class="collapsible-header" onclick="toggleCollapse('professionalStudies')">
-                        <h3>Professional Studies</h3>
-                        <span class="collapse-icon">▼</span>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Your Partner in Business Growth and Automation</h1>
+                <p>Empowering businesses with tailored services and cutting-edge automation technologies</p>
+                <div class="cta-buttons">
+                    <a href="#services" class="btn primary">Explore Our Services</a>
+                    <a href="#contact" class="btn secondary">Get Started Today</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Transforming Businesses Through Innovation</h3>
+                        <p>Founded in 2020, A&I Consultancy emerged from a vision to revolutionize how businesses operate in the digital age. We recognized that many organizations struggle with digital transformation and automation, often finding enterprise solutions out of reach. This inspired us to create a consultancy that delivers enterprise-grade solutions at prices that work for businesses of all sizes.</p>
+                        
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <i class="fas fa-robot"></i>
+                                <h4>AI-Powered Solutions</h4>
+                                <p>Leveraging cutting-edge artificial intelligence to automate processes and drive decision-making</p>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-code"></i>
+                                <h4>Advanced Technology</h4>
+                                <p>Utilizing modern programming languages and frameworks to build robust, scalable solutions</p>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Business Intelligence</h4>
+                                <p>Converting data into actionable insights for strategic business growth</p>
+                            </div>
+                        </div>
+
+                        <div class="vision-statement">
+                            <h3>Our Vision</h3>
+                            <p>We envision a future where businesses of all sizes can harness the power of automation and artificial intelligence to operate efficiently, scale seamlessly, and compete effectively in the global marketplace. Our commitment is to be the bridge that connects ambitious businesses with transformative technology solutions.</p>
+                        </div>
                     </div>
-                    <div class="collapsible-content" id="professionalStudies">
-                        <ul>
-                            <li>
-                                <strong>CA Intermediate</strong>
-                                <p>Currently Pursuing</p>
-                                <p class="institution">Institute of Chartered Accountants of India</p>
-                            </li>
-                            <li>
-                                <strong>CA Foundation</strong>
-                                <p>Completed</p>
-                                <p class="institution">Institute of Chartered Accountants of India</p>
-                            </li>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                
+                <div class="services-tabs">
+                    <button class="tab-trigger active" data-filter="all">All Services</button>
+                    <button class="tab-trigger" data-filter="finance">Finance</button>
+                    <button class="tab-trigger" data-filter="technology">Technology</button>
+                    <button class="tab-trigger" data-filter="business">Business</button>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Finance Services -->
+                    <div class="service-card" data-category="finance">
+                        <div class="service-front">
+                            <i class="fas fa-calculator"></i>
+                            <h3>Accounts Management</h3>
+                            <p>Streamlined bookkeeping, financial reporting, and compliance solutions</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Financial Management Solutions</h4>
+                            <ul>
+                                <li>Automated bookkeeping systems</li>
+                                <li>Real-time financial reporting</li>
+                                <li>Tax compliance management</li>
+                                <li>Financial analysis and forecasting</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="finance">
+                        <div class="service-front">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Cost Management</h3>
+                            <p>Customized strategies to optimize operational expenses and enhance profitability</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Cost Optimization Solutions</h4>
+                            <ul>
+                                <li>Expense analysis and reduction</li>
+                                <li>Budget optimization</li>
+                                <li>Resource allocation</li>
+                                <li>Profitability enhancement</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <!-- Technology Services -->
+                    <div class="service-card" data-category="technology">
+                        <div class="service-front">
+                            <i class="fas fa-code"></i>
+                            <h3>Software Development</h3>
+                            <p>Tailor-made software solutions for specific business needs</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Custom Software Solutions</h4>
+                            <ul>
+                                <li>Custom application development</li>
+                                <li>System integration</li>
+                                <li>API development</li>
+                                <li>Legacy system modernization</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <!-- Business Services -->
+                    <div class="service-card" data-category="business">
+                        <div class="service-front">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Business Incubator & Accelerator</h3>
+                            <p>Support for startups and growing businesses to achieve their potential</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Startup Growth Solutions</h4>
+                            <ul>
+                                <li>Business plan development</li>
+                                <li>Market entry strategy</li>
+                                <li>Funding assistance</li>
+                                <li>Growth acceleration</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="business">
+                        <div class="service-front">
+                            <i class="fas fa-bullhorn"></i>
+                            <h3>Sales & Marketing Management</h3>
+                            <p>Comprehensive sales strategies and marketing solutions to drive growth</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Growth Strategy Solutions</h4>
+                            <ul>
+                                <li>Sales strategy development</li>
+                                <li>Marketing campaign management</li>
+                                <li>Lead generation</li>
+                                <li>Market analysis</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="business">
+                        <div class="service-front">
+                            <i class="fas fa-tools"></i>
+                            <h3>Maintenance Management</h3>
+                            <p>Efficient upkeep of business operations to ensure reliability and continuity</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Maintenance Solutions</h4>
+                            <ul>
+                                <li>Preventive maintenance</li>
+                                <li>Asset management</li>
+                                <li>Performance monitoring</li>
+                                <li>System optimization</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="business">
+                        <div class="service-front">
+                            <i class="fas fa-boxes"></i>
+                            <h3>Stock & Inventory Management</h3>
+                            <p>Tools and solutions for effective inventory tracking and supply chain optimization</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Inventory Control Solutions</h4>
+                            <ul>
+                                <li>Real-time inventory tracking</li>
+                                <li>Supply chain optimization</li>
+                                <li>Warehouse management</li>
+                                <li>Order fulfillment</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="technology">
+                        <div class="service-front">
+                            <i class="fas fa-paint-brush"></i>
+                            <h3>Design Fluctuator</h3>
+                            <p>Creative design services for branding, marketing materials, and more</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Creative Design Solutions</h4>
+                            <ul>
+                                <li>Brand identity design</li>
+                                <li>Marketing collateral</li>
+                                <li>UI/UX design</li>
+                                <li>Visual content creation</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="business">
+                        <div class="service-front">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Complete Marketing Solutions</h3>
+                            <p>From strategy development to execution, including digital marketing campaigns</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Marketing Strategy Solutions</h4>
+                            <ul>
+                                <li>Digital marketing</li>
+                                <li>Content strategy</li>
+                                <li>Social media management</li>
+                                <li>Analytics and reporting</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="technology">
+                        <div class="service-front">
+                            <i class="fas fa-globe"></i>
+                            <h3>Website Development</h3>
+                            <p>AI-powered and custom-coded websites designed for optimal performance</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Web Development Solutions</h4>
+                            <ul>
+                                <li>Custom website development</li>
+                                <li>E-commerce solutions</li>
+                                <li>CMS implementation</li>
+                                <li>Website optimization</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+
+                    <div class="service-card" data-category="technology">
+                        <div class="service-front">
+                            <i class="fas fa-robot"></i>
+                            <h3>Business Automation</h3>
+                            <p>End-to-end automation solutions for streamlining processes and boosting productivity</p>
+                            <button class="learn-more">Learn More</button>
+                        </div>
+                        <div class="service-details">
+                            <h4>Automation Solutions</h4>
+                            <ul>
+                                <li>Process automation</li>
+                                <li>Workflow optimization</li>
+                                <li>AI integration</li>
+                                <li>Productivity enhancement</li>
+                            </ul>
+                            <button class="close-details">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section id="why-us" class="why-us">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Driven Excellence</h3>
+                        <p>Our expertise in artificial intelligence and machine learning enables us to deliver cutting-edge solutions that give your business a competitive advantage.</p>
+                        <ul class="benefit-features">
+                            <li>Advanced AI algorithms</li>
+                            <li>Intelligent automation</li>
+                            <li>Predictive analytics</li>
+                        </ul>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Cost-Effective Solutions</h3>
+                        <p>We believe in delivering enterprise-grade solutions at prices that work for businesses of all sizes, ensuring maximum ROI for your investment.</p>
+                        <ul class="benefit-features">
+                            <li>Flexible pricing models</li>
+                            <li>Scalable solutions</li>
+                            <li>Value-driven results</li>
+                        </ul>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Tailored Approach</h3>
+                        <p>Every business is unique. We customize our solutions to match your specific needs, ensuring perfect alignment with your business goals.</p>
+                        <ul class="benefit-features">
+                            <li>Personalized strategies</li>
+                            <li>Industry-specific solutions</li>
+                            <li>Adaptable frameworks</li>
+                        </ul>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Proven Track Record</h3>
+                        <p>Our success is measured by the success of our clients. We've helped businesses across various industries achieve their goals and scale effectively.</p>
+                        <ul class="benefit-features">
+                            <li>Industry expertise</li>
+                            <li>Success stories</li>
+                            <li>Long-term partnerships</li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="education-item">
-                    <h3>Academic Qualifications</h3>
-                    <ul>
-                        <li>
-                            <strong>Bachelor of Commerce (B.Com)</strong>
-                            <p class="institution">University of Calcutta</p>
-                        </li>
-                        <li>
-                            <strong>Class XII (ISC)</strong>
-                            <p class="institution">Indian School Certificate Examination</p>
-                        </li>
-                        <li>
-                            <strong>Class X (ICSE)</strong>
-                            <p class="institution">Council for the Indian School Certificate Examinations</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="education-item">
-                    <h3>Additional Qualifications</h3>
-                    <ul>
-                        <li>
-                            <strong>Artistic Skills Certification</strong>
-                            <p class="institution">Greenwave Visuals for Central Arts</p>
-                        </li>
-                        <li>
-                            <strong>Computer Diploma</strong>
-                            <p class="institution">Lions Computer Centre</p>
-                        </li>
-                    </ul>
-                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="card" id="companies">
-            <div class="card-header">
-                <span class="icon">🏢</span>
-                <h2 class="card-title">Companies</h2>
-            </div>
-            
-            <!-- A&I Consultancy Section -->
-            <div class="company-section">
-                <h3 class="company-title">
-                    <span class="icon">🌟</span>
-                    A&I Consultancy
-                </h3>
-                <div class="company-section">
-                    <strong>Transforming Businesses Through Innovation</strong>
-                    <p class="company-description">
-                        Founded in 2024, A&I Consultancy emerged from a vision to revolutionize how businesses operate in the digital age. We recognized that many organizations struggle with digital transformation and automation, often finding enterprise solutions out of reach. This inspired us to create a consultancy that delivers enterprise-grade solutions at prices that work for businesses of all sizes.
-                    </p>
+        <div class="section-divider"></div>
 
-                    <div class="core-features">
-                        <div class="feature">
-                            <h4>AI-Powered Solutions</h4>
-                            <p>Leveraging cutting-edge artificial intelligence to automate processes and drive decision-making</p>
-                        </div>
-                        <div class="feature">
-                            <h4>Advanced Technology</h4>
-                            <p>Utilizing modern programming languages and frameworks to build robust, scalable solutions</p>
-                        </div>
-                        <div class="feature">
-                            <h4>Business Intelligence</h4>
-                            <p>Converting data into actionable insights for strategic business growth</p>
-                        </div>
-                    </div>
-
-                    <div class="vision-section">
-                        <h3>Our Vision</h3>
-                        <p>We envision a future where businesses of all sizes can harness the power of automation and artificial intelligence to operate efficiently, scale seamlessly, and compete effectively in the global marketplace. Our commitment is to be the bridge that connects ambitious businesses with transformative technology solutions.</p>
-                    </div>
-
-                    <div class="services-grid">
-                        <h3 style="text-align: center;">Our Services</h3>
-                        <div class="service-categories" style="justify-content: center;">
-                            <span class="service-tag">Finance</span>
-                            <span class="service-tag">Technology</span>
-                            <span class="service-tag">Business</span>
-                        </div>
-                        
-                        <div class="services-container">
-                            <div class="service-card">
-                                <h4>Accounts Management</h4>
-                                <ul>
-                                    <li>Automated bookkeeping systems</li>
-                                    <li>Real-time financial reporting</li>
-                                    <li>Tax compliance management</li>
-                                </ul>
-                            </div>
-
-                            <div class="service-card">
-                                <h4>Cost Management</h4>
-                                <ul>
-                                    <li>Expense analysis and reduction</li>
-                                    <li>Budget optimization</li>
-                                    <li>Resource allocation</li>
-                                    <li>Profitability enhancement</li>
-                                </ul>
-                            </div>
-
-                            <div class="service-card">
-                                <h4>Software Development</h4>
-                                <ul>
-                                    <li>Custom application development</li>
-                                    <li>System integration</li>
-                                    <li>API development</li>
-                                    <li>Legacy system modernization</li>
-                                </ul>
-                            </div>
-
-                            <!-- Add remaining service cards similarly -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Divider -->
-            <div class="company-divider"></div>
-
-            <!-- A&I Academy Section -->
-            <div class="company-section">
-                <h3 class="company-title">
-                    <span class="icon">🎓</span>
-                    A&I Academy
-                </h3>
-                <div class="company-section">
-                    <strong>Where Education Meets Innovation</strong>
-                    <p class="company-description">
-                        At A&I Academy, we connect students in need of quality tuition with experienced teachers through an innovative referral-based system. Acting as the intermediary, we ensure that teachers, students, and referrers are all supported with seamless service and timely payments.
-                    </p>
-
-                    <div class="core-features">
-                        <div class="feature">
-                            <h4>Innovative Ideas</h4>
-                            <p>Revolutionizing traditional education through digital innovation</p>
-                        </div>
-                        <div class="feature">
-                            <h4>Quality Education</h4>
-                            <p>Ensuring high standards through certified teachers and structured learning</p>
-                        </div>
-                        <div class="feature">
-                            <h4>Collaborative Learning</h4>
-                            <p>Creating an ecosystem that benefits students, teachers, and referrers</p>
-                        </div>
-                    </div>
-
-                    <div class="vision-section">
-                        <h3>Our Vision & Mission</h3>
-                        <p>Making quality education accessible while creating opportunities for teachers and referrers. Building a collaborative educational ecosystem that benefits everyone involved.</p>
-                    </div>
-
-                    <div class="services-grid">
-                        <h3>Platform Features</h3>
-                        <div class="service-categories">
-                            <span class="service-tag">Students</span>
-                            <span class="service-tag">Teachers</span>
-                            <span class="service-tag">Referrers</span>
-                        </div>
-                        
-                        <div class="services-container">
-                            <div class="service-card">
-                                <h4>For Students</h4>
-                                <ul>
-                                    <li>Quality Education</li>
-                                    <li>Certified Teachers</li>
-                                    <li>Free Study Material</li>
-                                    <li>Performance Tracking</li>
-                                </ul>
-                            </div>
-
-                            <div class="service-card">
-                                <h4>For Teachers</h4>
-                                <ul>
-                                    <li>Free Registration</li>
-                                    <li>Competitive Pay</li>
-                                    <li>Flexible Hours</li>
-                                    <li>Regular Students</li>
-                                </ul>
-                            </div>
-
-                            <div class="service-card">
-                                <h4>For Referrers</h4>
-                                <ul>
-                                    <li>Zero Investment</li>
-                                    <li>Monthly Commission</li>
-                                    <li>Lifetime Earnings</li>
-                                    <li>Easy Referral System</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="offer-section">
-                        <div class="service-card" style="text-align: center;">
-                            <h4>Join A&I Academy Today!</h4>
-                            <p style="margin: 1rem 0;">Start your journey with us and be part of the educational revolution</p>
-                            <a href="https://sites.google.com/view/ai-academyonline/home" 
-                               target="_blank" 
-                               class="plan-button">
-                                Visit Website →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-overlay" id="contact-form">
-            <div class="contact-form-container">
-                <div class="form-header">
-                    <h2>Get In Touch</h2>
-                    <p>Fill out the form below and we'll get back to you shortly.</p>
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Success Stories</h2>
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="automation">Automation</button>
+                    <button class="filter-btn" data-filter="software">Software</button>
+                    <button class="filter-btn" data-filter="marketing">Marketing</button>
+                    <button class="filter-btn" data-filter="consulting">Consulting</button>
                 </div>
                 
-                <form class="modern-form">
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" required>
+                <div class="case-studies-grid">
+                    <div class="case-study-card" data-category="automation">
+                        <div class="case-study-image">
+                            <img src="images/case-study-1.jpg" alt="Manufacturing Automation">
+                            <div class="case-study-overlay">
+                                <span class="category">Automation</span>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="emailAddress">Email Address *</label>
-                            <input type="email" id="emailAddress" required>
+                        <div class="case-study-content">
+                            <h3>Manufacturing Process Automation</h3>
+                            <p class="client">Global Manufacturing Corp.</p>
+                            <div class="results">
+                                <div class="result-item">
+                                    <span class="result-number">60%</span>
+                                    <span class="result-label">Efficiency Increase</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">40%</span>
+                                    <span class="result-label">Cost Reduction</span>
+                                </div>
+                            </div>
+                            <button class="view-case-study" onclick="openCaseStudy(1)">View Case Study</button>
                         </div>
                     </div>
 
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="phoneNumber">Phone Number</label>
-                            <input type="tel" id="phoneNumber">
+                    <div class="case-study-card" data-category="software">
+                        <div class="case-study-image">
+                            <img src="images/case-study-2.jpg" alt="E-commerce Platform">
+                            <div class="case-study-overlay">
+                                <span class="category">Software</span>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="companyName">Company Name</label>
-                            <input type="text" id="companyName">
+                        <div class="case-study-content">
+                            <h3>E-commerce Platform Development</h3>
+                            <p class="client">RetailTech Solutions</p>
+                            <div class="results">
+                                <div class="result-item">
+                                    <span class="result-number">200%</span>
+                                    <span class="result-label">Sales Growth</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">85%</span>
+                                    <span class="result-label">Customer Satisfaction</span>
+                                </div>
+                            </div>
+                            <button class="view-case-study" onclick="openCaseStudy(2)">View Case Study</button>
                         </div>
                     </div>
 
-                    <div class="input-group">
-                        <label for="serviceInterest">Service Interest *</label>
-                        <select id="serviceInterest" required>
-                            <option value="">Select a Service</option>
-                            <option value="business">Business Consultancy</option>
-                            <option value="education">Educational Services</option>
-                            <option value="software">Software Development</option>
-                            <option value="other">Other</option>
-                        </select>
+                    <div class="case-study-card" data-category="marketing">
+                        <div class="case-study-image">
+                            <img src="images/case-study-3.jpg" alt="Digital Marketing Campaign">
+                            <div class="case-study-overlay">
+                                <span class="category">Marketing</span>
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Digital Marketing Transformation</h3>
+                            <p class="client">Fashion Retail Brand</p>
+                            <div class="results">
+                                <div class="result-item">
+                                    <span class="result-number">300%</span>
+                                    <span class="result-label">ROI Increase</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">150%</span>
+                                    <span class="result-label">Lead Generation</span>
+                                </div>
+                            </div>
+                            <button class="view-case-study" onclick="openCaseStudy(3)">View Case Study</button>
+                        </div>
                     </div>
 
-                    <div class="input-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" rows="4" required></textarea>
+                    <div class="case-study-card" data-category="consulting">
+                        <div class="case-study-image">
+                            <img src="images/case-study-4.jpg" alt="Business Strategy">
+                            <div class="case-study-overlay">
+                                <span class="category">Consulting</span>
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Business Process Optimization</h3>
+                            <p class="client">Logistics Solutions Inc.</p>
+                            <div class="results">
+                                <div class="result-item">
+                                    <span class="result-number">45%</span>
+                                    <span class="result-label">Operational Costs</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">90%</span>
+                                    <span class="result-label">Process Efficiency</span>
+                                </div>
+                            </div>
+                            <button class="view-case-study" onclick="openCaseStudy(4)">View Case Study</button>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <button type="submit" class="submit-button">
-                        Send Message
-                        <span class="button-icon">→</span>
-                    </button>
-                </form>
+            <!-- Case Study Modal -->
+            <div id="caseStudyModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+    </main>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p>123 Business Street</p>
+                        <p>Suite 100</p>
+                        <p>City, Country</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>Main: +1 (555) 123-4567</p>
+                        <p>Support: +1 (555) 987-6543</p>
+                        <p>Toll-free: 1-800-123-4567</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>info@aiconsultancy.com</p>
+                        <p>support@aiconsultancy.com</p>
+                        <p>sales@aiconsultancy.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday: 10:00 AM - 2:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="accounts">Accounts Management</option>
+                                <option value="cost">Cost Management</option>
+                                <option value="software">Software Development</option>
+                                <option value="incubator">Business Incubator</option>
+                                <option value="marketing">Sales & Marketing</option>
+                                <option value="maintenance">Maintenance Management</option>
+                                <option value="inventory">Stock & Inventory</option>
+                                <option value="design">Design Services</option>
+                                <option value="website">Website Development</option>
+                                <option value="automation">Business Automation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="loading">
-        <div class="loader"></div>
-    </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Contact</h3>
-                <p>📧 ishteaqueahmed123@gmail.com</p>
-                <p> +91 - 8617273074</p>
-                <p>📍 Kolkata, West Bengal, India</p>
+                <h3>Contact Us</h3>
+                <p>Email: info@aiconsultancy.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <p>Address: 123 Business Street, City, Country</p>
             </div>
             <div class="footer-section">
-                <h3>Companies</h3>
-                <a href="#">A&I Consultancy</a>
-                <a href="https://sites.google.com/view/ai-academyonline/home">A&I Academy</a>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ishteaque-a-671950203/" target="_blank" class="social-link">LinkedIn</a>
-                    <a href="https://www.instagram.com/i_ishteaqui/" target="_blank" class="social-link">Instagram</a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Ishteaque A.I. All rights reserved.</p>
+            <p>&copy; 2024 A&I Consultancy Private Limited. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        // Observe all cards
-        document.querySelectorAll('.card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // Handle loading state
-        window.addEventListener('load', () => {
-            document.querySelector('.loading').style.display = 'none';
-        });
-
-        // Smooth scroll for mobile devices
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Update the mobile menu JavaScript
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        const menuLinks = document.querySelectorAll('.nav-links a');
-
-        function toggleMenu() {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
-        }
-
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking a link
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                toggleMenu();
-                // Add small delay to allow smooth scrolling
-                setTimeout(() => {
-                    document.body.style.overflow = 'auto';
-                }, 300);
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('active') && 
-                !navLinks.contains(e.target) && 
-                !mobileMenuBtn.contains(e.target)) {
-                toggleMenu();
-            }
-        });
-
-        // Navbar scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > lastScroll) {
-                navbar.style.transform = 'translateY(-100%)';
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
-            lastScroll = currentScroll;
-        });
-
-        function toggleDialog() {
-            const dialog = document.getElementById('helpDialog');
-            dialog.classList.toggle('active');
-        }
-
-        // Close dialog when clicking outside
-        document.addEventListener('click', (e) => {
-            const dialog = document.getElementById('helpDialog');
-            const trigger = document.querySelector('.help-trigger');
-            if (!dialog.contains(e.target) && !trigger.contains(e.target)) {
-                dialog.classList.remove('active');
-            }
-        });
-
-        function toggleCollapse(id) {
-            const content = document.getElementById(id);
-            const icon = content.previousElementSibling.querySelector('.collapse-icon');
-            
-            content.classList.toggle('active');
-            icon.classList.toggle('active');
-            
-            // Optional: Close other sections when opening one
-            // document.querySelectorAll('.collapsible-content').forEach(item => {
-            //     if (item.id !== id) {
-            //         item.classList.remove('active');
-            //         item.previousElementSibling.querySelector('.collapse-icon').classList.remove('active');
-            //     }
-            // });
-        }
-
-        // Optional: Open Professional Studies section by default
-        // document.addEventListener('DOMContentLoaded', () => {
-        //     toggleCollapse('professionalStudies');
-        // });
-    </script>
+    <script src="js/main.js"></script>
+    <button class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </body>
 </html> 
